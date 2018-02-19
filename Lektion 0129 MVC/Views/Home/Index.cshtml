@@ -1,0 +1,38 @@
+﻿
+@*@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class=" table table-bordered table-striped table-responsive" >
+
+    @for (int y = 1; y <= 10; y++)
+    {
+        <tr>  
+            @for (int x = 1; x <= 10; x++)
+            {
+                <td>@( x*y)</td>
+            }
+        </tr>
+    }
+</table>*@ 
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+<table class=" table table-bordered table-striped table-responsive">
+
+    @for (int y = 1; y <= 10; y++)
+    {
+        <tr>
+            @for (int x = 1; x <= 10; x++)
+            {
+                <td>@( x * y)</td>
+            }
+        </tr>
+    }
+</table>

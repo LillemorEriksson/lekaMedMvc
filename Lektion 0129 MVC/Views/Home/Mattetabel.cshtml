@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Mattetabel";
+}
+
+<h2>Välkommen!</h2>
+<h2>Skriv in valfritt nummer mellan 1-99 för att få gångertabelerna :-)</h2>
+
+<div class="row">
+
+
+    <form class="col -md-12" action="@Url.Action("Mattetabel", "Home")" method="post">
+
+        <label>Ange nummer:</label>
+        <input type="number" name="multi" value="1" />
+
+        <input type="submit" value="Tryck och få tians gånger tabel av ditt nummer" />
+
+    </form>
+</div>
+
+@if (Session["vilkaNummer"] != null)
+{
+    <div class="row">
+        <table class="table table-bordered table-striped">
+            <tr>
+                @foreach (int num in (List<int>)Session["vilkaNummer"])
+                {
+                    <td>@num</td>
+                }
+
+
+            </tr>
+
+        </table>
+
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-12">
+         @if (ViewBag.multi != null)
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                <p>@i x @ViewBag.multi = @(i * (int)ViewBag.multi )</p> //typcastar heter det (int), det du plockade upp är ett int.
+
+            }
+        }
+
+    </div>
+</div>
